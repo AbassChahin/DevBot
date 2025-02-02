@@ -3,14 +3,11 @@ using DotNetEnv;
 using DevBot;
 
 public class Program {
-    public static async Task Main()
+    private static async Task Main(string[] args)
     {
         Env.Load();
-        ClientHandler clientHandler = ClientHandler.GetInstance();
-        await clientHandler.InitDiscordClient();
+        await new Bot().RunAsync();
     }
-
-
 
     public static string GetEnv(string envName)
     {
