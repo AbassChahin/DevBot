@@ -5,6 +5,7 @@ using DevBot;
 public class Program {
     private static async Task Main(string[] args)
     {
+        await APIController.ApiGetCall();
         Env.Load();
         await new Bot().RunAsync();
     }
