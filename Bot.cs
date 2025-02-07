@@ -2,12 +2,7 @@
 using Discord.Interactions;
 using Discord.WebSocket;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DevBot
 {
@@ -17,8 +12,8 @@ namespace DevBot
         private readonly InteractionService _commands;
         private readonly IServiceProvider _services;
 
-        private ulong guildID = (ulong)Convert.ToInt64(Program.GetEnv("GUILD_ID"));
-        private string discordToken = Program.GetEnv("BOT_TOKEN");
+        private ulong guildID = (ulong)Convert.ToInt64(EnvHandler.GetEnv("GUILD_ID"));
+        private string discordToken = EnvHandler.GetEnv("BOT_TOKEN");
 
         public Bot()
         {
